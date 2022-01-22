@@ -113,6 +113,7 @@ public class RootController implements Initializable {
             try {
                 LocationController.checkLocation(geoIpDataTask.get());
                 ConnectionController.checkConnection(geoIpDataTask.get());
+                SecurityController.checkSecurity(geoIpDataTask.get());
             } catch (InterruptedException ex) {
                 ex.printStackTrace();
             } catch (ExecutionException ex) {

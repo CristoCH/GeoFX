@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane fx:id="view" hgap="5.0" vgap="5.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" />
+      <RowConstraints minHeight="10.0" />
+      <RowConstraints minHeight="10.0" />
+      <RowConstraints minHeight="10.0" />
+   </rowConstraints>
+   <columnConstraints>
+      <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+      <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+   </columnConstraints>
+   <children>
+      <HBox spacing="5.0" GridPane.columnSpan="2">
+         <children>
+            <ImageView pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/Network-Shield-icon.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="securityLabel" text="-" />
+         </children>
+      </HBox>
+      <VBox GridPane.rowIndex="1">
+         <children>
+            <Label text="PROXY DETECTED?">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="proxyCheck" mnemonicParsing="false" />
+         </children>
+      </VBox>
+      <VBox GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <Label text="TOR DETECTED?">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="torCheck" mnemonicParsing="false" />
+         </children>
+      </VBox>
+      <VBox GridPane.rowIndex="2">
+         <children>
+            <Label text="CRAWLER DETECTED?">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="crawlerCheck" mnemonicParsing="false" />
+         </children>
+      </VBox>
+      <VBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <children>
+            <Label text="THREAT LEVEL">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="threatLabel" text="-" />
+         </children>
+      </VBox>
+      <VBox GridPane.columnSpan="2" GridPane.rowIndex="3">
+         <children>
+            <Label text="POTENTIAL THREAT TYPES">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="potentialLabel" text="-" />
+         </children>
+      </VBox>
+   </children>
+</GridPane>

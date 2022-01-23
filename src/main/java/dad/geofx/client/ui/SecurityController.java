@@ -79,7 +79,7 @@ public class SecurityController implements Initializable {
         threat.set(geoIpData.getSecurity().getThreatLevel());
         if(geoIpData.getSecurity().getThreatTypes() == null){
             ipSecurity.set("This IP is safe. No threats have been detected.");
-            potential.set("No threats have been detected for this IP adress.");
+            potential.set("No threats have been detected for this IP address.");
         }else{
             ipSecurity.set(geoIpData.getSecurity()+"");
             potential.set(geoIpData.getSecurity().getThreatTypes()+"");

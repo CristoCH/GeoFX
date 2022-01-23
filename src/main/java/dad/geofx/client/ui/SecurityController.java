@@ -73,12 +73,17 @@ public class SecurityController implements Initializable {
 
     public static void checkSecurity(GeoIpData geoIpData){
 
-        ipSecurity.set(geoIpData.getSecurity()+"");
         proxy.set(geoIpData.getSecurity().getIsProxy());
         tor.set(geoIpData.getSecurity().getIsTor());
         crawler.set(geoIpData.getSecurity().getIsCrawler());
         threat.set(geoIpData.getSecurity().getThreatLevel());
-        potential.set(geoIpData.getSecurity().getThreatTypes()+"");
+        if(geoIpData.getSecurity().getThreatTypes() == null){
+            ipSecurity.set("This IP is safe. No threats have been detected.");
+            potential.set("No threats have been detected for this IP adress.");
+        }else{
+            ipSecurity.set(geoIpData.getSecurity()+"");
+            potential.set(geoIpData.getSecurity().getThreatTypes()+"");
+        }
 
     }
 
